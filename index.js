@@ -45,12 +45,13 @@ Use the copy function below to do the following:
   2. Return a copy of the received array  
 */
 //take 1 parameter - holding place for array you will pass in as your argument
-function copy(/*your code here*/){
+function copy(array){
   // take a spread of the parameter
-  /*your code here*/
+  let copy = [...originalFlavors];
+  return copy;
 }    
 
-
+console.log('task 1', copy(originalFlavors));
 
 
 
@@ -65,11 +66,16 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 */
 
 // taking 1 parameter - holding the place for an array
-function is31Flavors(/*your code here*/){
- /*your code here*/
+function is31Flavors(array){
  //conditional inside of here if it's true return true else return false looking for an exact match
- //returning a boolean
+ if(originalFlavors.length === 31){
+    //returning a boolean
+   return(true);
+ }else{
+   return(false);
+ }
 }
+console.log('task 2', is31Flavors(originalFlavors));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Corporate has come to you with an idea for a new flavor: Rainbow Sherbert! They think this will be a game changer. You need to modify the array to include this flavor. 
@@ -84,12 +90,14 @@ Use the addFlavor function below to do the following:
 */
 
 // 2 parameters receive an array and a string (holding the place for the new flavor)
-function addFlavor(/*your code here*/){
+function addFlavor(array, string){
   //unshift the new flavor to add it to the beginning of the received array
- /*your code here*/
+  originalFlavors.unshift(string);
  // return the array
+ return originalFlavors;
 }
-
+console.log('task 3');
+// console.log('task 3', addFlavor(originalFlavors, 'BooBerry'));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Houston, we have a problem! There are now 32 flavors in the originalFlavors array! Your task is to remove an item from the end of the array. 
@@ -102,11 +110,14 @@ Use the removeLastFlavor function below to do the following:
   For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
 // 1 parameter receive an array
-function removeLastFlavor(/*your code here*/){
- /*your code here*/
+function removeLastFlavor(array){
  // remove the last item using .pop
+ array.pop();
  // return the array
+ return array;
 }
+console.log('task 4');
+//  console.log('task 4', removeLastFlavor(originalFlavors));
 
 
 
@@ -122,11 +133,11 @@ Use the getFlavorByIndex function below to do the following:
 */
 
 // 2 parameters array and a number (holding the place for the index)
-function getFlavorByIndex(/*your code here*/){
-  /*your code here*/
+function getFlavorByIndex(array, number){
   // return array[0]
+  return array[number];
 }
-
+ console.log('task 5', getFlavorByIndex(originalFlavors, 2));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 As corporate wants to add more and more flavors to their lineup, they've realized that they need to remove flavors based on flavor name, 
@@ -144,14 +155,18 @@ Use the removeFlavorByName function below to do the following:
 */
 
 // 2 parameters array and a string we want to remove
-function removeFlavorByName(/*your code here*/){
-  /*your code here*/
+function removeFlavorByName(array, string){
   // loop through array and check each index for an exact match of the string then if it exists remove it using splice
-  // .splice takes the start and how many items to delete
-  
+  for(let i = 0; i < array.length; i++){
+     // .splice takes the start and how many items to delete
+    if(array[i] === string){
+      array.splice(i, 1)
+    }
+  }
   //outside of loop return the array
+  return array;
 }
-
+console.log('task 6');
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
